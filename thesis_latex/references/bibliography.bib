@@ -1,0 +1,216 @@
+%==============================================================
+% ΒΙΒΛΙΟΓΡΑΦΙΑ
+% Αρχείο: references/bibliography.bib
+%
+% Οδηγίες:
+% - Κάθε νέα πηγή που χρησιμοποιείς προστίθεται εδώ
+% - Στο κείμενο γράφεις \citep{key} ή \citet{key}
+% - Το Overleaf τα μορφοποιεί αυτόματα
+%==============================================================
+
+%--------------------------------------------------------------
+% ΚΑΝΟΝΙΣΤΙΚΟ ΠΛΑΙΣΙΟ
+%--------------------------------------------------------------
+
+@techreport{basel2006,
+  author      = {{Basel Committee on Banking Supervision}},
+  title       = {International Convergence of Capital Measurement and
+                 Capital Standards: A Revised Framework},
+  institution = {Bank for International Settlements},
+  year        = {2006},
+  url         = {https://www.bis.org/publ/bcbs128.pdf}
+}
+
+@techreport{basel2017,
+  author      = {{Basel Committee on Banking Supervision}},
+  title       = {Basel {III}: Finalising Post-Crisis Reforms},
+  institution = {Bank for International Settlements},
+  year        = {2017},
+  url         = {https://www.bis.org/bcbs/publ/d424.pdf}
+}
+
+@techreport{sr117,
+  author      = {{Board of Governors of the Federal Reserve System}},
+  title       = {Supervisory Guidance on Model Risk Management
+                 ({SR} Letter 11-7)},
+  institution = {Federal Reserve},
+  year        = {2011},
+  url         = {https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm}
+}
+
+@techreport{eba2023,
+  author      = {{European Banking Authority}},
+  title       = {{EBA} Guidelines on Internal Ratings-Based Approach},
+  institution = {European Banking Authority},
+  year        = {2023},
+  url         = {https://www.eba.europa.eu}
+}
+
+%--------------------------------------------------------------
+% CREDIT RISK & SCORING
+%--------------------------------------------------------------
+
+@book{mcneil2015,
+  author    = {McNeil, Alexander J. and Frey, R{\"u}diger and Embrechts, Paul},
+  title     = {Quantitative Risk Management: Concepts, Techniques and Tools},
+  publisher = {Princeton University Press},
+  year      = {2015},
+  edition   = {2nd}
+}
+
+@book{siddiqi2006,
+  author    = {Siddiqi, Naeem},
+  title     = {Credit Risk Scorecards: Developing and Implementing
+               Intelligent Credit Scoring},
+  publisher = {John Wiley \& Sons},
+  year      = {2006}
+}
+
+@article{altman1968,
+  author  = {Altman, Edward I.},
+  title   = {Financial Ratios, Discriminant Analysis and the Prediction
+             of Corporate Bankruptcy},
+  journal = {The Journal of Finance},
+  volume  = {23},
+  number  = {4},
+  pages   = {589--609},
+  year    = {1968}
+}
+
+@article{thomas2000,
+  author  = {Thomas, Lyn C.},
+  title   = {A survey of credit and behavioural scoring: forecasting
+             financial risk of lending to consumers},
+  journal = {International Journal of Forecasting},
+  volume  = {16},
+  number  = {2},
+  pages   = {149--172},
+  year    = {2000}
+}
+
+%--------------------------------------------------------------
+% MACHINE LEARNING MODELS
+%--------------------------------------------------------------
+
+@article{chen2016xgboost,
+  author    = {Chen, Tianqi and Guestrin, Carlos},
+  title     = {{XGBoost}: A Scalable Tree Boosting System},
+  booktitle = {Proceedings of the 22nd ACM SIGKDD International
+               Conference on Knowledge Discovery and Data Mining},
+  pages     = {785--794},
+  year      = {2016}
+}
+
+@article{breiman2001,
+  author  = {Breiman, Leo},
+  title   = {Random Forests},
+  journal = {Machine Learning},
+  volume  = {45},
+  number  = {1},
+  pages   = {5--32},
+  year    = {2001}
+}
+
+@book{hastie2009,
+  author    = {Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome},
+  title     = {The Elements of Statistical Learning},
+  publisher = {Springer},
+  year      = {2009},
+  edition   = {2nd}
+}
+
+%--------------------------------------------------------------
+% INTERPRETABILITY / XAI
+%--------------------------------------------------------------
+
+@article{lundberg2017shap,
+  author  = {Lundberg, Scott M. and Lee, Su-In},
+  title   = {A Unified Approach to Interpreting Model Predictions},
+  journal = {Advances in Neural Information Processing Systems},
+  volume  = {30},
+  year    = {2017}
+}
+
+@article{ribeiro2016lime,
+  author  = {Ribeiro, Marco Tulio and Singh, Sameer and Guestrin, Carlos},
+  title   = {"Why Should {I} Trust You?": Explaining the Predictions
+             of Any Classifier},
+  journal = {Proceedings of the 22nd ACM SIGKDD International
+             Conference on Knowledge Discovery and Data Mining},
+  pages   = {1135--1144},
+  year    = {2016}
+}
+
+@book{molnar2022,
+  author    = {Molnar, Christoph},
+  title     = {Interpretable Machine Learning: A Guide for Making
+               Black Box Models Explainable},
+  publisher = {Self-published},
+  year      = {2022},
+  edition   = {2nd},
+  url       = {https://christophm.github.io/interpretable-ml-book/}
+}
+
+%--------------------------------------------------------------
+% BIAS & FAIRNESS
+%--------------------------------------------------------------
+
+@article{barocas2016,
+  author  = {Barocas, Solon and Hardt, Moritz and Narayanan, Arvind},
+  title   = {Fairness and Machine Learning: Limitations and Opportunities},
+  journal = {fairmlbook.org},
+  year    = {2019},
+  url     = {https://fairmlbook.org}
+}
+
+@article{dwork2012,
+  author  = {Dwork, Cynthia and Hardt, Moritz and Pitassi, Toniann
+             and Reingold, Omer and Zemel, Richard},
+  title   = {Fairness Through Awareness},
+  journal = {Proceedings of the 3rd Innovations in Theoretical
+             Computer Science Conference},
+  pages   = {214--226},
+  year    = {2012}
+}
+
+%--------------------------------------------------------------
+% MODEL MONITORING
+%--------------------------------------------------------------
+
+@article{gama2014,
+  author  = {Gama, Jo{\~a}o and {\v{Z}}liobait{\.e}, Indr{\.e} and
+             Bifet, Albert and Pechenizkiy, Mykola and Bouchachia, Abdelhamid},
+  title   = {A survey on concept drift adaptation},
+  journal = {ACM Computing Surveys},
+  volume  = {46},
+  number  = {4},
+  pages   = {1--37},
+  year    = {2014}
+}
+
+%--------------------------------------------------------------
+% FICO HELOC DATASET
+%--------------------------------------------------------------
+
+@misc{fico2018,
+  author = {{FICO}},
+  title  = {{HELOC} Dataset — Explainable Machine Learning Challenge},
+  year   = {2018},
+  url    = {https://community.fico.com/s/explainable-machine-learning-challenge}
+}
+
+%--------------------------------------------------------------
+% ADDITIONAL (να συμπληρωθούν κατά τη συγγραφή)
+%--------------------------------------------------------------
+
+% Προσθέτεις εδώ κάθε νέα πηγή που χρησιμοποιείς.
+% Template:
+%
+@inproceedings{niculescu2005predicting,
+  author    = {Niculescu-Mizil, Alexandru and Caruana, Rich},
+  title     = {Predicting Good Probabilities with Supervised Learning},
+  booktitle = {Proceedings of the 22nd International Conference on
+               Machine Learning (ICML)},
+  pages     = {625--632},
+  year      = {2005}
+}
