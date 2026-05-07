@@ -4,52 +4,11 @@
 \chapter*{Περίληψη}
 \addcontentsline{toc}{chapter}{Περίληψη}
 
-Η ραγδαία υιοθέτηση μοντέλων μηχανικής μάθησης στον τομέα του
-πιστωτικού κινδύνου εισάγει ένταση μεταξύ της αυξημένης προβλεπτικής
-ικανότητας και της μειωμένης ερμηνευσιμότητας, σε ένα κανονιστικό
-πλαίσιο που γίνεται διαρκώς πιο απαιτητικό. Η παρούσα εργασία
-εξετάζει πώς επικυρώνονται, ερμηνεύονται και παρακολουθούνται τα
-σύγχρονα μοντέλα μηχανικής μάθησης στον πιστωτικό κίνδυνο και πώς
-μεταβάλλονται οι απαιτήσεις αυτές καθώς αυξάνεται η πολυπλοκότητα
-του μοντέλου. Για τον σκοπό αυτό συγκρίνονται τρία μοντέλα
-διαφορετικής πολυπλοκότητας στη βάση δεδομένων FICO HELOC: η
-Logistic Regression ως παραδοσιακό σημείο αναφοράς, το XGBoost ως
-κύριο μοντέλο ανάλυσης και ένα Feed-Forward Neural Network ως
-benchmark αυξημένης πολυπλοκότητας. Η αξιολόγηση πραγματοποιείται
-σε τέσσερις άξονες: απόδοση, ερμηνευσιμότητα, ανίχνευση μεροληψίας
-και παρακολούθηση σταθερότητας. Τα μοντέλα παρουσιάζουν οριακές
-διαφορές στους δείκτες απόδοσης (AUC 0,789--0,796), εύρημα που
-εξηγείται από την εκτεταμένη γραμμικότητα της βάσης λόγω
-προεπεξεργασίας από την FICO. Η ανίχνευση μεροληψίας με τη
-βιβλιοθήκη Fairlearn αποκαλύπτει σχεδόν ταυτόσημες τιμές DPD
-(${\sim}0{,}33$) και DI (${\sim}0{,}47$) και στα τρία μοντέλα,
-αποδεικνύοντας ότι η πηγή της μεροληψίας είναι τα δεδομένα και όχι
-η εσωτερική λογική κάποιου αλγορίθμου. Ο μετριασμός μεροληψίας
-συνεπάγεται κόστος που διαφοροποιείται ανά τεχνική: η
-in-processing προσέγγιση μειώνει την AUC της Logistic Regression
-κατά 14\%, ενώ η post-processing προσέγγιση διατηρεί την AUC του
-XGBoost αμετάβλητη με μικρή απώλεια στο Balanced Accuracy. Η
-παρακολούθηση μέσω PSI και CSI σε προσομοιωμένα σενάρια οικονομικής
-επιδείνωσης λειτουργεί ως αξιόπιστο σύστημα έγκαιρης προειδοποίησης.
-Ωστόσο, η ερμηνευσιμότητα παρουσιάζει τη δραματικότερη διαφοροποίηση
-ανά μοντέλο: η ανάλυση SHAP για το XGBoost ολοκληρώνεται σε
-δευτερόλεπτα μέσω TreeExplainer, ενώ για το FFNN απαιτεί
-${\sim}2{,}5$ ώρες μέσω KernelExplainer. Με βάση τα ευρήματα
-προτείνεται πλαίσιο επικύρωσης που περιλαμβάνει αρχές σχεδιασμού,
-πρότυπη ροή εργασιών επτά βημάτων και διαφοροποιημένες απαιτήσεις
-ανά επίπεδο πολυπλοκότητας. Η κεντρική συμβολή του πλαισίου είναι η
-απόδειξη ότι η αύξηση της πολυπλοκότητας δεν αυξάνει γραμμικά όλες
-τις απαιτήσεις επικύρωσης --- η ερμηνευσιμότητα είναι ο άξονας στον
-οποίο η πολυπλοκότητα έχει δραματική επίπτωση, ενώ η παρακολούθηση
-και η ανίχνευση μεροληψίας παραμένουν σχετικά σταθερές.
+Εκκρεμεί
 
 \vspace{2cm}
 
-\noindent\textbf{Λέξεις-κλειδιά:} πιστωτικός κίνδυνος, μηχανική
-μάθηση, επικύρωση μοντέλων, ερμηνευσιμότητα, ανίχνευση μεροληψίας,
-παρακολούθηση μοντέλων, SHAP, XGBoost, νευρωνικά δίκτυα,
-FICO HELOC, Basel II/III.
-
+\noindent\textbf{Λέξεις-κλειδιά:} Εκκρεμεί
 %--------------------------------------------------------------
 % ENGLISH ABSTRACT
 %--------------------------------------------------------------
@@ -57,47 +16,10 @@ FICO HELOC, Basel II/III.
 \addcontentsline{toc}{chapter}{Abstract}
 \begin{english}
 
-The rapid adoption of machine learning models in credit risk
-introduces a tension between increased predictive performance and
-reduced interpretability, within a regulatory framework that is
-becoming progressively more demanding. This thesis examines how
-modern machine learning models are validated, interpreted and
-monitored in credit risk, and how these requirements scale as
-model complexity increases. To this end, three models of varying
-complexity are compared on the FICO HELOC dataset: Logistic
-Regression as a traditional baseline, XGBoost as the primary
-analytical model, and a Feed-Forward Neural Network as a
-high-complexity benchmark. Evaluation is carried out across four
-axes: performance, interpretability, bias detection and stability
-monitoring. The models exhibit marginal differences in performance
-metrics (AUC 0.789--0.796), a finding explained by the extensive
-linearity of the dataset due to FICO's preprocessing. Bias
-detection using the Fairlearn library reveals nearly identical
-DPD ($\sim$0.33) and DI ($\sim$0.47) values across all three models,
-demonstrating that the source of bias lies in the data rather than
-in any model's internal logic. Bias mitigation comes at a cost
-that varies by technique: the in-processing approach reduces the
-AUC of Logistic Regression by 14\%, while the post-processing
-approach leaves the AUC of XGBoost unchanged at the cost of a
-modest reduction in Balanced Accuracy. Monitoring through PSI and
-CSI on simulated economic deterioration scenarios proves to be a
-reliable early warning system. However, interpretability shows the
-most dramatic differentiation across models: SHAP analysis for
-XGBoost completes in seconds via TreeExplainer, whereas for the
-FFNN it requires approximately 2.5 hours via KernelExplainer.
-Based on these findings, a validation framework is proposed
-comprising design principles, a seven-step standard workflow and
-differentiated requirements per complexity level. The central
-contribution of the framework is the demonstration that increased
-model complexity does not scale all validation requirements
-linearly --- interpretability is the axis on which complexity has
-dramatic impact, while monitoring and bias detection remain
-relatively stable.
+Εκκρεμεί
 
 \vspace{2cm}
 
-\noindent\textbf{Keywords:} credit risk, machine learning, model
-validation, interpretability, bias detection, model monitoring,
-SHAP, XGBoost, neural networks, FICO HELOC, Basel II/III.
+Εκκρεμεί
 
 \end{english}

@@ -1,0 +1,235 @@
+%==============================================================
+% ΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ
+% Πλαίσιο Επικύρωσης Μοντέλων Μηχανικής Μάθησης στον Πιστωτικό Κίνδυνο
+%==============================================================
+% Compiler: XeLaTeX (REQUIRED for Greek)
+% In Overleaf: Menu → Compiler → XeLaTeX
+%==============================================================
+
+% !TEX encoding = UTF-8
+% !TEX program = xelatex
+\documentclass[12pt,a4paper]{report}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{greek}
+\setotherlanguage{english} 
+
+%--------------------------------------------------------------
+% PACKAGES 
+%-------------------------------------------------------------- 
+\usepackage{fontspec}           % Font selection (XeLaTeX)
+\usepackage{polyglossia}        % Greek language support
+\usepackage{geometry}           % Page margins
+\usepackage{setspace}           % Line spacingP
+\usepackage{graphicx}           % Images
+\usepackage{booktabs}           % Professional tables
+\usepackage{tabularx}           % Flexible tables
+\usepackage{longtable}          % Multi-page tables
+\usepackage{array}              % Table column formatting
+\usepackage{amsmath}            % Math equations
+\usepackage{amssymb}            % Math symbols
+\usepackage{xcolor}             % Colors
+\usepackage{hyperref}           % Clickable links & TOC
+\usepackage{natbib}             % Bibliography (Author, Year style)
+\usepackage{caption}            % Figure/table captions
+\usepackage{subcaption}         % Sub-figures
+\usepackage{float}              % Figure placement [H]
+\usepackage{enumitem}           % Custom lists
+\usepackage{fancyhdr}           % Headers and footers
+\usepackage{emptypage}          % No headers on empty pages
+\usepackage{microtype}          % Better text justification
+\usepackage{csquotes}           % Smart quotes
+\usepackage{listings}           % Code listings
+\usepackage{tcolorbox}          % Colored boxes for notes
+\usepackage{tikz}               % Diagrams (optional)
+\usepackage{multirow}           % Merged table cells
+\usepackage{capt-of}
+\usepackage{pdflscape}
+
+%--------------------------------------------------------------
+% LANGUAGE: Greek as main, English as secondary
+%--------------------------------------------------------------
+\setmainlanguage{greek}
+\setotherlanguage{english}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\newfontfamily\greekfonttt{Consolas}[Scale=MatchLowercase]
+
+%--------------------------------------------------------------
+% Figures and tables path
+%--------------------------------------------------------------
+\graphicspath{{../figures/}}
+%--------------------------------------------------------------
+% PAGE GEOMETRY
+%--------------------------------------------------------------
+\geometry{
+  a4paper,
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=2.5cm,
+  headheight=15pt
+}
+
+%--------------------------------------------------------------
+% LINE SPACING
+%--------------------------------------------------------------
+\setstretch{1.5}
+
+%--------------------------------------------------------------
+% COLORS
+%--------------------------------------------------------------
+\definecolor{thesisblue}{RGB}{31, 56, 100}
+\definecolor{thesislightblue}{RGB}{46, 117, 182}
+\definecolor{notegray}{RGB}{245, 245, 245}
+\definecolor{notetext}{RGB}{80, 80, 80}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeblue}{rgb}{0,0,0.8}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.97}
+
+%--------------------------------------------------------------
+% HYPERREF SETUP
+%--------------------------------------------------------------
+\hypersetup{
+  colorlinks=true,
+  linkcolor=thesisblue,
+  citecolor=thesislightblue,
+  urlcolor=thesislightblue,
+  pdftitle={Πλαίσιο Επικύρωσης Μοντέλων Μηχανικής Μάθησης στον Πιστωτικό Κίνδυνο},
+  pdfauthor={},
+  pdfsubject={Διπλωματική Εργασία},
+  pdfkeywords={credit risk, machine learning, model validation, XAI, bias detection}
+}
+
+%--------------------------------------------------------------
+% HEADERS & FOOTERS
+%--------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{thesisblue}{\nouppercase{\leftmark}}}
+\fancyhead[R]{\small\textcolor{thesisblue}{\thepage}}
+\fancyfoot[C]{\small\textcolor{gray}{Διπλωματική Εργασία}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%--------------------------------------------------------------
+% CHAPTER / SECTION FORMATTING
+%--------------------------------------------------------------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\color{thesisblue}}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{thesislightblue}}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{20pt}{10pt}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{black}}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{15pt}{8pt}
+
+%--------------------------------------------------------------
+% CODE LISTINGS
+%--------------------------------------------------------------
+\lstdefinestyle{pythonstyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{codeblue}\bfseries,
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{orange},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  language=Python,
+  frame=single,
+  rulecolor=\color{gray!30}
+}
+\lstset{style=pythonstyle}
+
+%--------------------------------------------------------------
+% CUSTOM ENVIRONMENTS
+%--------------------------------------------------------------
+% Note box (for important remarks)
+\newtcolorbox{notebox}{
+  colback=notegray,
+  colframe=thesislightblue,
+  fonttitle=\bfseries,
+  title=Σημείωση,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+% Definition box
+\newtcolorbox{definitionbox}[1]{
+  colback=blue!5,
+  colframe=thesisblue,
+  fonttitle=\bfseries,
+  title=Ορισμός: #1,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+%--------------------------------------------------------------
+% BIBLIOGRAPHY STYLE
+%--------------------------------------------------------------
+\bibliographystyle{apalike}
+
+%==============================================================
+% DOCUMENT BEGINS
+%==============================================================
+\begin{document}
+
+%--------------------------------------------------------------
+% TITLE PAGE
+%--------------------------------------------------------------
+\input{chapters/titlepage}
+
+%--------------------------------------------------------------
+% FRONT MATTER (Roman numerals)
+%--------------------------------------------------------------
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\input{chapters/abstract}
+\tableofcontents
+\listoffigures      % Comment out if no figures yet
+\listoftables       % Comment out if no tables yet
+
+%--------------------------------------------------------------
+% MAIN MATTER (Arabic numerals)
+%--------------------------------------------------------------
+\cleardoublepage
+\pagenumbering{arabic}
+
+\input{chapters/chapter1}   % Εισαγωγή
+\input{chapters/chapter2}   % Θεωρητικό & Κανονιστικό Πλαίσιο
+\input{chapters/chapter3}   % Δεδομένα, Μοντέλα & Μεθοδολογία
+\input{chapters/chapter4}   % Πειραματικά Αποτελέσματα
+\input{chapters/chapter5}   % Πρόταση Πλαισίου Επικύρωσης
+\input{chapters/chapter6}   % Συμπεράσματα
+
+%--------------------------------------------------------------
+% BIBLIOGRAPHY
+%--------------------------------------------------------------
+\cleardoublepage
+\bibliography{references/bibliography}
+
+%--------------------------------------------------------------
+% APPENDICES (optional)
+%--------------------------------------------------------------
+% \appendix
+% \input{chapters/appendix_a}
+% \input{chapters/appendix_b}
+
+\end{document}
