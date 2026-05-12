@@ -3,24 +3,19 @@
 % Πλαίσιο Επικύρωσης Μοντέλων Μηχανικής Μάθησης στον Πιστωτικό Κίνδυνο
 %==============================================================
 % Compiler: XeLaTeX (REQUIRED for Greek)
-% In Overleaf: Menu → Compiler → XeLaTeX
 %==============================================================
 
 % !TEX encoding = UTF-8
 % !TEX program = xelatex
 \documentclass[12pt,a4paper]{report}
-\usepackage{fontspec}
-\usepackage{polyglossia}
-\setmainlanguage{greek}
-\setotherlanguage{english} 
 
 %--------------------------------------------------------------
-% PACKAGES 
-%-------------------------------------------------------------- 
+% PACKAGES
+%--------------------------------------------------------------
 \usepackage{fontspec}           % Font selection (XeLaTeX)
 \usepackage{polyglossia}        % Greek language support
 \usepackage{geometry}           % Page margins
-\usepackage{setspace}           % Line spacingP
+\usepackage{setspace}           % Line spacing
 \usepackage{graphicx}           % Images
 \usepackage{booktabs}           % Professional tables
 \usepackage{tabularx}           % Flexible tables
@@ -30,7 +25,7 @@
 \usepackage{amssymb}            % Math symbols
 \usepackage{xcolor}             % Colors
 \usepackage{hyperref}           % Clickable links & TOC
-\usepackage{natbib}             % Bibliography (Author, Year style)
+\usepackage[numbers,sort&compress]{natbib} 
 \usepackage{caption}            % Figure/table captions
 \usepackage{subcaption}         % Sub-figures
 \usepackage{float}              % Figure placement [H]
@@ -45,9 +40,10 @@
 \usepackage{multirow}           % Merged table cells
 \usepackage{capt-of}
 \usepackage{pdflscape}
+\usepackage{titlesec}
 
 %--------------------------------------------------------------
-% LANGUAGE: Greek as main, English as secondary
+% LANGUAGE & FONTS
 %--------------------------------------------------------------
 \setmainlanguage{greek}
 \setotherlanguage{english}
@@ -58,9 +54,10 @@
 \newfontfamily\greekfonttt{Consolas}[Scale=MatchLowercase]
 
 %--------------------------------------------------------------
-% Figures and tables path
+% FIGURES PATH
 %--------------------------------------------------------------
 \graphicspath{{../figures/}}
+
 %--------------------------------------------------------------
 % PAGE GEOMETRY
 %--------------------------------------------------------------
@@ -118,7 +115,6 @@
 %--------------------------------------------------------------
 % CHAPTER / SECTION FORMATTING
 %--------------------------------------------------------------
-\usepackage{titlesec}
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries\color{thesisblue}}
   {\chaptertitlename\ \thechapter}{20pt}{\Huge}
@@ -162,7 +158,6 @@
 %--------------------------------------------------------------
 % CUSTOM ENVIRONMENTS
 %--------------------------------------------------------------
-% Note box (for important remarks)
 \newtcolorbox{notebox}{
   colback=notegray,
   colframe=thesislightblue,
@@ -171,7 +166,6 @@
   left=6pt, right=6pt, top=4pt, bottom=4pt
 }
 
-% Definition box
 \newtcolorbox{definitionbox}[1]{
   colback=blue!5,
   colframe=thesisblue,
@@ -181,9 +175,9 @@
 }
 
 %--------------------------------------------------------------
-% BIBLIOGRAPHY STYLE
+% BIBLIOGRAPHY STYLE (natbib — apalike = Author, Year)
 %--------------------------------------------------------------
-\bibliographystyle{apalike}
+\bibliographystyle{IEEEtran}
 
 %==============================================================
 % DOCUMENT BEGINS
@@ -202,10 +196,10 @@
 \setcounter{page}{2}
 
 \input{chapters/abstract}
-\input{chapters/acknowledgements} 
+\input{chapters/acknowledgements}
 \tableofcontents
-\listoffigures      % Comment out if no figures yet
-\listoftables       % Comment out if no tables yet
+\listoffigures
+\listoftables
 
 %--------------------------------------------------------------
 % MAIN MATTER (Arabic numerals)
