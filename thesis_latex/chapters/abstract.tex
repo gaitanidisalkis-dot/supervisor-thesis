@@ -28,8 +28,7 @@ $0{,}789$--$0{,}796$ και για τα τρία μοντέλα. Το μοντέ
 και όχι την «εσωτερική λογική» των μοντέλων. Αξίζει να σημειωθεί ότι η FICO
 HELOC δεν περιέχει προστατευόμενα χαρακτηριστικά. Έτσι, για την επίδειξη της
 διαδικασίας ανίχνευσης μεροληψίας χρησιμοποιήθηκε ένα μη προστατευόμενο
-χαρακτηριστικό της ως proxy μεταβλητή. Η ύπαρξη μεροληψίας στη βάση οφείλεται
-σε αυτή την επιλογή. Ο μετριασμός μεροληψίας έγινε με in-processing διαδικασία
+χαρακτηριστικό της ως proxy μεταβλητή. Ο μετριασμός μεροληψίας έγινε με in-processing διαδικασία
 για το μοντέλο Logistic Regression και επέφερε μείωση απόδοσης (σχετική μείωση
 δείκτη AUC κατά $14\%$). Για το μοντέλο XGBoost χρησιμοποιήθηκε post-processing
 διαδικασία αλλαγής του ορίου απόφασης, άρα δεν χρειάστηκε επανεκπαίδευση
@@ -82,17 +81,16 @@ complexity of each model. Specifically, three models of varying complexity are
 compared: Logistic Regression as a traditional baseline, XGBoost as the primary
 model of analysis, and a Feed-Forward Neural Network as a higher-complexity
 algorithm. The dataset used is the FICO HELOC. Regarding model performance,
-differences are marginal, with AUC scores ranging between $0{,}789$ and $0{,}796$
+differences are marginal, with AUC scores ranging between $0{.}789$ and $0{.}796$
 across all three models. XGBoost achieves the best performance with a slight
 margin. The small performance gap between models is explained by the increased
 linearity of the dataset and the presence of preprocessed aggregate features.
 Bias detection was performed using the Fairlearn library, and model scores were
-comparable, with DPD values of ${\sim}0{,}33$ and DI values of ${\sim}0{,}47$.
+comparable, with DPD values of ${\sim}0{.}33$ and DI values of ${\sim}0{.}47$.
 This demonstrates that bias originated from the dataset rather than from the
 internal logic of the models. It should be noted that the FICO HELOC dataset
 does not contain protected attributes. Therefore, a non-protected feature was
-used as a proxy variable to demonstrate the bias detection process. The presence
-of bias in the dataset is attributable to this choice. Bias mitigation for the
+used as a proxy variable to demonstrate the bias detection process. Bias mitigation for the
 Logistic Regression model was performed using an in-processing approach, which
 resulted in a reduction in performance (a relative decrease of $14\%$ in the AUC
 score). For the XGBoost model, a post-processing approach was applied by adjusting
@@ -109,7 +107,7 @@ differences between the requirements of each algorithm were observed along the
 interpretability axis. The interpretation of LR is immediate and complete through
 the $\beta$ coefficients, as is the SHAP analysis for XGBoost, which is completed
 in seconds via the TreeExplainer. In contrast, the FFNN requires considerably
-greater computational cost, as the KernelExplainer requires ${\sim}2{,}5$ hours
+greater computational cost, as the KernelExplainer requires ${\sim}2{.}5$ hours
 for the SHAP analysis. Based on the aforementioned findings, a specific validation
 framework is proposed, comprising design principles, a standard workflow, and
 differentiated requirements per model complexity level. The most significant
