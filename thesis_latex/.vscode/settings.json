@@ -1,4 +1,5 @@
 {
+    "latex-workshop.latex.recipe.default": "xelatex -> bibtex -> xelatex * 2",
     "latex-workshop.latex.recipes": [
         {
             "name": "xelatex -> bibtex -> xelatex * 2",
